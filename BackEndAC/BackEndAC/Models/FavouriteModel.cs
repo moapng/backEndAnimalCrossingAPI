@@ -9,7 +9,7 @@ namespace BackEndAC.Models
     public class FavouriteModel
     {
         public int id { get; set; }
-        //[Key]
         public string name { get; set; }
+        public int price { get; set; }
     }
 }

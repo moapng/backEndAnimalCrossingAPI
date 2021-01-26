@@ -15,14 +15,13 @@ namespace BackEndAC.Controllers
     [ApiController]
     public class FavouritesController : ControllerBase
     {
-        
 
         // GET: /<FavouritesController>
         [HttpGet]
         public IEnumerable<FavouriteModel> Get()
         {
             var options = new DbContextOptionsBuilder<MyContext>().UseInMemoryDatabase(databaseName: "Test").Options;
-            using(var context = new MyContext(options))
+            using (var context = new MyContext(options))
             {
                 return context.favourites.ToArray();
             }
@@ -33,10 +32,14 @@ namespace BackEndAC.Controllers
         public void Post([FromBody] FavouriteModel favourite)
         {
             var options = new DbContextOptionsBuilder<MyContext>().UseInMemoryDatabase(databaseName: "Test").Options;
+
             using (var context = new MyContext(options))
             {
-                context.favourites.Add(favourite);
-                context.SaveChanges();
+                if (favourite.name != null)
+                {
+                    context.favourites.Add(favourite);
+                    context.SaveChanges();
+                }
             }
         }
 

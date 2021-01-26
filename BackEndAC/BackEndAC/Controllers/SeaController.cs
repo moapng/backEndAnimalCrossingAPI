@@ -33,7 +33,7 @@ namespace BackEndAC.Controllers
         [HttpGet("{seaID}")]
         public async Task<IActionResult> Get(int seaID)
         {
-            var url = "http://acnhapi.com/v1/bugs/" + seaID;
+            var url = "http://acnhapi.com/v1/sea/" + seaID;
             string StringResponse;
             using (var client = new HttpClient())
             using (var response = await client.GetAsync(url))

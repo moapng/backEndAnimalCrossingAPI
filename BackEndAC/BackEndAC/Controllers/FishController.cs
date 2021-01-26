@@ -14,7 +14,7 @@ namespace BackEndPlantFriend.Controllers
     [ApiController]
     public class FishController : ControllerBase
     {
-        // GET all fish
+        // GET all fishes
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -44,24 +44,6 @@ namespace BackEndPlantFriend.Controllers
                 var serializerResponse = JsonConvert.DeserializeObject(StringResponse);
             }
             return Ok(StringResponse);
-        }
-
-       
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-       
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
