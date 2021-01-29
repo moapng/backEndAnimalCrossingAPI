@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,19 +16,34 @@ namespace BackEndPlantFriend.Controllers
     [ApiController]
     public class FishController : ControllerBase
     {
+
+        private readonly IMemoryCache _memoryCache;
+        public FishController(IMemoryCache memoryCache)
+        {
+            _memoryCache = memoryCache;
+        }
+
         // GET all fishes
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             var url = "http://acnhapi.com/v1/fish/";
+            var cacheKey = "Get_All_Fish";
+
+            if (_memoryCache.TryGetValue(cacheKey, out string cachedValue))
+                return Ok(cachedValue);
+
             string StringResponse;
+            
             using (var client = new HttpClient())
             using (var response = await client.GetAsync(url))
             {
                 var responseContent = response.Content;
                 StringResponse = await responseContent.ReadAsStringAsync();
-                var serializerResponse = JsonConvert.DeserializeObject(StringResponse);
+                
             }
+
+            _memoryCache.Set(cacheKey, StringResponse);
             return Ok(StringResponse);
         }
 
@@ -35,14 +52,20 @@ namespace BackEndPlantFriend.Controllers
         public async Task<IActionResult> Get(int fishID)
         {
             var url = "http://acnhapi.com/v1/fish/" + fishID;
+            var cacheKey = $"Get_Fish-{fishID}";
+            if (_memoryCache.TryGetValue(cacheKey, out string cachedValue))
+                return Ok(cachedValue);
+
             string StringResponse;
+
             using (var client = new HttpClient())
             using (var response = await client.GetAsync(url))
             {
                 var responseContent = response.Content;
                 StringResponse = await responseContent.ReadAsStringAsync();
-                var serializerResponse = JsonConvert.DeserializeObject(StringResponse);
             }
+
+            _memoryCache.Set(cacheKey, StringResponse);
             return Ok(StringResponse);
         }
     }
