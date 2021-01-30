@@ -7,46 +7,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace BackEndAC.Controllers
-{
-    [Route("[controller]")]
-    [ApiController]
-    public class FavouritesController : ControllerBase
-    {
 
-        // GET: /<FavouritesController>
-        [HttpGet]
-        public IEnumerable<FavouriteModel> Get()
-        {
-            var options = new DbContextOptionsBuilder<MyContext>().UseInMemoryDatabase(databaseName: "Test").Options;
-            using (var context = new MyContext(options))
-            {
-                return context.favourites.ToArray();
-            }
-        }
+// NOT WORKING AS INTENDED
 
-        // POST /<FavouritesController>
-        [HttpPost]
-        public void Post([FromBody] FavouriteModel favourite)
-        {
-            var options = new DbContextOptionsBuilder<MyContext>().UseInMemoryDatabase(databaseName: "Test").Options;
+//namespace BackEndAC.Controllers
+//{
+//    [Route("[controller]")]
+//    [ApiController]
+//    public class FavouritesController : ControllerBase
+//    {
 
-            using (var context = new MyContext(options))
-            {
-                if (favourite.name != null)
-                {
-                    context.favourites.Add(favourite);
-                    context.SaveChanges();
-                }
-            }
-        }
+//        // GET: /<FavouritesController>
+//        [HttpGet]
+//        public IEnumerable<FavouriteModel> Get()
+//        {
+//            var options = new DbContextOptionsBuilder<MyContext>().UseInMemoryDatabase(databaseName: "Test").Options;
+//            using (var context = new MyContext(options))
+//            {
+//                return context.favourites.ToArray();
+//            }
+//        }
 
-        // DELETE /<FavouritesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
-    }
-}
+//        // POST /<FavouritesController>
+//        [HttpPost]
+//        public void Post([FromBody] FavouriteModel favourite)
+//        {
+//            var options = new DbContextOptionsBuilder<MyContext>().UseInMemoryDatabase(databaseName: "Test").Options;
+
+//            using (var context = new MyContext(options))
+//            {
+
+//                if (favourite.name != null && !context.favourites.Contains(favourite) )
+//                {
+//                    context.favourites.Add(favourite);
+//                    context.SaveChanges();
+//                }
+//            }
+//        }
+
+//        // DELETE /<FavouritesController>/5
+//        [HttpDelete("{id}")]
+//        public void Delete(int id)
+//        {
+//        }
+//    }
+//}

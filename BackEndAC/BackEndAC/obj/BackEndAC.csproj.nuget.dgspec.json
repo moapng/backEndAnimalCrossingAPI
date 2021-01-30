@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Moa\\Documents\\GitHub\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj": {}
+    "C:\\Users\\Moa\\OneDrive\\Dokument\\GitHub\\BackEndAnimalCrossingAPI\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Moa\\Documents\\GitHub\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj": {
+    "C:\\Users\\Moa\\OneDrive\\Dokument\\GitHub\\BackEndAnimalCrossingAPI\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Moa\\Documents\\GitHub\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj",
+        "projectUniqueName": "C:\\Users\\Moa\\OneDrive\\Dokument\\GitHub\\BackEndAnimalCrossingAPI\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj",
         "projectName": "BackEndAC",
-        "projectPath": "C:\\Users\\Moa\\Documents\\GitHub\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj",
+        "projectPath": "C:\\Users\\Moa\\OneDrive\\Dokument\\GitHub\\BackEndAnimalCrossingAPI\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\BackEndAC.csproj",
         "packagesPath": "C:\\Users\\Moa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Moa\\Documents\\GitHub\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\obj\\",
+        "outputPath": "C:\\Users\\Moa\\OneDrive\\Dokument\\GitHub\\BackEndAnimalCrossingAPI\\backEndAnimalCrossingAPI\\BackEndAC\\BackEndAC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Moa\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +26,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +37,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
@@ -71,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
